@@ -1,0 +1,37 @@
+/* -- click focus -- */
+:root {
+  --top: 0;
+  --left: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.egg0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  translate: 0;
+  visibility: hidden;
+  background-color: rgba(0, 128, 0, 0);
+  outline: 0vh solid rgba(114, 114, 114, 0.5);
+  transition: width 1s, height 1s;
+}
+
+.egg1 {
+  top: var(--top);
+  left: var(--left);
+  width: 10vw;
+  height: 10vh;
+  translate: -50% -50%;
+  visibility: visible;
+  outline: 200vh solid rgba(114, 114, 114, 0.5);
+  border-radius: 50% 50% 50% 50%;
+}
+/* -- end click focus -- */
