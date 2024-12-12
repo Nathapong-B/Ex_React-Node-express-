@@ -11,6 +11,7 @@ import DragAndDrop2 from './pages/drag-drop-2/drag-drop-2';
 import UploadtoCloudinary from './pages/upload-to-cloudinary/uploadtoCloudinary';
 import StripePayment from './pages/stripe_payment/stripePayment';
 import Complete from './pages/stripe_payment/complete';
+import ManageForm from './pages/manage-form/manageForm';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,9 @@ const router = createBrowserRouter([
   }, {
     path: '/complete',
     element: <Complete />
+  }, {
+    path: '/manage-form',
+    element: <ManageForm />
   }
 ])
 

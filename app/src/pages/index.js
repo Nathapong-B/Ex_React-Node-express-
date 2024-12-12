@@ -27,6 +27,7 @@ export default function Index() {
                     <div>&#8728; <Link to={'/upload-abort'}><span>Ex. Upload and Abort</span></Link></div>
                     <div>&#8728; <Link to={'/click-focus'}><span>Ex. Click and Focus</span></Link></div>
                     <div>&#8728; <Link to={'/uploadtocloudinary'}><span>Ex. Upload To Cloudinary</span></Link></div>
+                    <div>&#8728; <Link to={'/manage-form'}><span>Ex. Validate form</span></Link></div>
                 </div>
                 <div className='col-6'>
                     <div>&#8728; <Link to={'/drag-drop'}><span>Ex. Drag and Drop</span></Link></div>
