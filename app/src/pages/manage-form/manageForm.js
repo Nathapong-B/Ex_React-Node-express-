@@ -19,6 +19,7 @@ const formSchema = z
 
 
 export default function ManageForm() {
+    // ใช้ useForm มาจัดการ input จากผู้ใช้ โดยให้ zodResolver มาช่วยจัดการความถูกต้องของข้อมูล
     const {
         register,
         handleSubmit,
@@ -27,12 +28,14 @@ export default function ManageForm() {
     } = useForm({ resolver: zodResolver(formSchema) });
     const [pwdScore, setPwdScore] = useState(0);
 
+    // เรียกใช้โดย handleSubmit ของ useForm
     const onSubmit = async (data) => {
         console.log(data.password);
         console.log(zxcvbn(data.password));
     };
 
     const passwordScore = (password) => {
+        // ใช้ zxcvbn เพื่อหาค่าความยากของ password
         setPwdScore(zxcvbn(password || '').score);
     };
 
@@ -51,7 +54,6 @@ export default function ManageForm() {
         if (pwdScore === 3) return setBarStrongPwd('info');
         if (pwdScore === 4) return setBarStrongPwd('success');
     };
-
 
     useEffect(() => {
         passwordScore(watch().password);
