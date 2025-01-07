@@ -12,6 +12,7 @@ import UploadtoCloudinary from './pages/upload-to-cloudinary/uploadtoCloudinary'
 import StripePayment from './pages/stripe_payment/stripePayment';
 import Complete from './pages/stripe_payment/complete';
 import ManageForm from './pages/manage-form/manageForm';
+import PdfMake from './pages/pdfmake/pdfMake';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,9 @@ const router = createBrowserRouter([
   }, {
     path: '/manage-form',
     element: <ManageForm />
+  }, {
+    path: '/pdfmake',
+    element: <PdfMake />
   }
 ])
 

@@ -33,6 +33,7 @@ export default function Index() {
                     <div>&#8728; <Link to={'/drag-drop'}><span>Ex. Drag and Drop</span></Link></div>
                     <div>&#8728; <Link to={'/drag-drop-2'}><span>Ex. Drag and Drop 2</span></Link></div>
                     <div>&#8728; <Link to={'/stripe-payment'}><span>Ex. Stripe Payment</span></Link></div>
+                    <div>&#8728; <Link to={'/pdfmake'}><span>Ex. Create Pdf</span></Link></div>
                 </div>
             </div>
         </div>
