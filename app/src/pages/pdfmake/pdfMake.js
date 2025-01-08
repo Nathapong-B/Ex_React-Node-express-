@@ -48,6 +48,7 @@ export default function PdfMake() {
     const pdfTable = (data) => {
         return (
             {
+                pageBreak: 'before',
                 // layout: 'noBorders', // optional
                 // layout: 'headerLineOnly', // optional
                 layout: 'lightHorizontalLines', // optional
@@ -76,10 +77,50 @@ export default function PdfMake() {
         )
     };
 
+    const pdfHeaders = (data) => {
+        return ([
+            { text: 'My PDF', fontSize: 16, alignment: 'center', lineHeight: 2 },
+            {
+                pageBreak: 'after',
+                fontSize: 10,
+                stack: [
+                    { text: `Value 1` },
+                    { text: `Value 2` },
+                    { text: `Value 3` },
+                    { text: `Value 4` },
+                ]
+            },
+
+            {
+                columns: [
+                    { width: '25%', text: 'First column' },
+                    {
+                        width: '25%',
+                        stack: [
+                            { text: 'Second column',italics:true },
+                            { text: `Value 1` },
+                            { text: `Value 2` },
+                            { text: `Value 3` },
+                            { text: `Value 4` },
+                        ]
+                    },
+                    { width: '25%', text: 'Third column' },
+                    { width: '25%', text: 'Fourth column' }
+                ],
+                // optional space between columns
+                columnGap: 10,
+                margin: [0, 10, 0, 10],
+            },
+
+            { text: `Customer phone : ` },
+        ])
+    };
+
     function printPDF() {
         var docDefinition = {
             content: [
                 { text: `ทดสอบ ${data[0].name}`, fontSize: 15, lineHeight: 2 },
+                pdfHeaders(),
                 pdfTable(data)
             ],
             defaultStyle: {
